@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
+  Alert
 } from 'react-native';
 import {
   heightPercentageToDP as hp,
@@ -84,10 +85,10 @@ const typeScreen = ({navigation, route}) => {
         </Text>
         <ScrollView>
           <View style={{flex: 1, alignItems: 'center'}}>
-            {console.log(newSubGradeDetail)}
+            {/* {console.log(newSubGradeDetail)} */}
             {newSubGradeDetail !== null
               ? newSubGradeDetail.map((item, index) => {
-                  console.log(newSubGradeDetail);
+                   console.log(newSubGradeDetail);
                   return (
                     <TouchableOpacity
                       key={item.csg_id}

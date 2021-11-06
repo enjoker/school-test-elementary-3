@@ -129,7 +129,7 @@ const homeScreen = ({navigation}) => {
     const gradeHandler = async (couresSelected, couresName) => {
       let action;
       if (couresSelected !== 0) {
-        action = subGradeActions.getSub(couresSelected, 1);
+        action = subGradeActions.getSub(couresSelected, 36);
         try {
           await dispatch(action);
           navigation.navigate('type', {couresName: couresName});
@@ -216,7 +216,7 @@ const homeScreen = ({navigation}) => {
             styles.textMedium34,
             {textAlign: 'center', color: '#333333'},
           ]}>
-          ประถมศึกษาปีที่ 1
+          ประถมศึกษาปีที่ 3
         </Text>
         <View
           style={{
