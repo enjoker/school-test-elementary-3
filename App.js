@@ -7,11 +7,13 @@ import AdMob from '@react-native-admob/admob';
 
 const App = () => {
    useEffect(() => {
-      const initAdmob = async () => {
-         await AdMob.initialize();
+      const getStatus = async () => {
+         const admobStatus = await AdMob.getInitializationStatus();
+         console.log('Admob status:')
+         console.log(admobStatus)
       };
 
-      initAdmob();
+      getStatus();
       setTimeout(() => {
          RNBootSplash.hide()
       }, 2000)
