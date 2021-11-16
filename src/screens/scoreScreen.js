@@ -245,23 +245,22 @@ const scoreScreen = ({ navigation, route }) => {
             ]}>
             คำถาม: {allQuestions[selectedQuestion.index].examQuestion}
           </Text>
-          {!answerResult && allQuestions[selectedQuestion.index].examPicAnswer !==
-            null &&
-            allQuestions[selectedQuestion.index].examPicAnswer !==
-            '' ? (
-            <View style={{ marginVertical: 5 }}>
-              <ImageModal              
-                modalImageResizeMode='contain'              
-                imageBackgroundColor="#ffffff"
-                style={{ width: 100, height: 100 }}
-                source={{
-                  uri:
-                    'https://api.test.schoolcare.app/getImg/getUploadFile?name=' +
-                    allQuestions[selectedQuestion.index].examPicAnswer.substr(8),
-                }}
-              />
-            </View>
-          ) : null}
+          {
+            allQuestions[selectedQuestion.index].examPicQuestion !== '' ?
+              <View style={{ marginVertical: 5 }}>
+                <ImageModal
+                  modalImageResizeMode='contain'
+                  imageBackgroundColor="#ffffff"
+                  style={{ width: 100, height: 100 }}
+                  source={{
+                    uri:
+                      'https://api.test.schoolcare.app/getImg/getUploadFile?name=' +
+                      allQuestions[selectedQuestion.index].examPicQuestion.substr(8),
+                  }}
+                />
+              </View>
+              : null
+          }
           <View style={{ flexDirection: 'row', marginVertical: 10 }}>
             <Text
               style={[
